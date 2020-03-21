@@ -26,24 +26,12 @@
 <body>
 
 
-<script type="text/javascript">
 
-// Here are some examples of things that you might want to do with Javascript
-
-// writing to a document directly
-
-//document.write('<p><b>While you are working in Javascript (or any language), it is really important to be able to debug. Some browsers offer very simple ways to see what is happening on a page.</b></p>');
-//document.write('<p>Chrome and Firefox in particular offer good Developer Tools and Javascript console access</p><br>');
-</script>
-
-<script type="text/javascript"charset="utf-8"src="https://d3js.org/d3-dsv.v1.min.js">
-        <!--script src="http://d3js.org/d3.min.js"></script--> 
-        <!--script src="d3.min.js?v=3.2.8"></script-->
-
+<script type="text/javascript" charset="utf-8" src="https://d3js.org/d3-dsv.v1.min.js">
 function CSVasTable(){
 
 
-            d3.text("presidents.csv", function(data) {
+            var result = d3.text("presidents.csv", function(data) {
                 var parsedCSV = d3.csv.parseRows(data);
 
                 var container = d3.select("body")
@@ -58,6 +46,7 @@ function CSVasTable(){
                         .append("td")
                         .text(function(d) { return d; });
             });
+			document.write(result);
 }
 </script>
 
