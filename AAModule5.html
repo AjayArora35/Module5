@@ -68,7 +68,7 @@ function CSVasTable(data, columns) {
 <script type="text/javascript">
 function DisplayDataAsTable() {
 
-d3.csv(",", "https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/charleyferrari/CUNY_DATA_608/master/module5/Data/presidents.csv", function(data) {
 alert(data);
   CSVasTable(data, ["Name", "Height", "Weight"]);
 });
