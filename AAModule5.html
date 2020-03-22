@@ -31,7 +31,7 @@
 <script type="text/javascript" src="http://mbostock.github.com/d3/d3.min.js"></script>
 <script type="text/javascript" >
 
-function CVSasTable(data, columns) {
+function CSVasTable(data, columns) {
     var table = d3.select("#csvdisplay").append("table"),
         thead = table.append("thead"),
         tbody = table.append("tbody");
@@ -68,8 +68,8 @@ function CVSasTable(data, columns) {
 <script type="text/javascript">
 function DisplayDataAsTable() {
 
-d3.csv("./presidents.csv", function(data) {
-  CVSasTable(data, ["Name", "Height", "Weight"]);
+d3.csv("https://github.com/AjayArora35/Module5/presidents.csv", function(data) {
+  CSVasTable(data, ["Name", "Height", "Weight"]);
 });
 
 }
@@ -168,7 +168,7 @@ function ReverseString(str) {
 <p id="Part1a"></p>
 <div id="csvdisplay"></div>
 </form>
-</p>
+
 
 <div id="target"></div>
 
