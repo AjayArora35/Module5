@@ -27,6 +27,7 @@
 
 
 
+
 <script src="https://d3js.org/d3-collection.v1.min.js"></script>
 <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
 <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
@@ -64,8 +65,7 @@ function CSVasTable(data, columns) {
         .enter()
         .append("td")
             .text(function(d) { return d.value; });
-    
-    return table;
+    return( table);
 }
 </script>
 
@@ -73,7 +73,6 @@ function CSVasTable(data, columns) {
 function DisplayDataAsTable() {
 
 d3.csv("https://raw.githubusercontent.com/AjayArora35/Module5/master/presidents.csv", function(data) {
-alert(data);
   CSVasTable(data, ["Name", "Height", "Weight"]);
 });
 
@@ -171,11 +170,12 @@ function ReverseString(str) {
 
 <p id="Part1"></p>
 <p id="Part1a"></p>
-<div id="csvdisplay"></div>
 </form>
+</p>
+
+<div id="csvdisplay"></div>
 
 
-<div id="target"></div>
 
 
 
