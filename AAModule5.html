@@ -75,7 +75,7 @@ function DisplayDataAsTable() {
 d3.csv("https://raw.githubusercontent.com/AjayArora35/Module5/master/presidents.csv", function(data) {
 		CSVasTable(data, ["Name", "Height", "Weight"]);
 		},
-		,function(error, rows){
+		function(error, rows){
 			console.log(rows); 
 	});
 }
