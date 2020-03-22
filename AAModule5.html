@@ -116,9 +116,13 @@ function goBack() {
 function presidentsMeticsFunction() {
   var rf = prompt("Please enter a president name", "Washington");
   if (rf != null) {
-
+	for(let x =0; x<presidentsData.length; x++)
+	{
+		if(presidentsData[0].data === rf)
+			alert(presidentsData[x].Height + ' : ' + presidentsData[x].Weight);
+	}
     //var result = ReverseString(rf);
-	alert(presidentsData[0].Name);
+	//alert(presidentsData[0].Name);
   }
 }
 
