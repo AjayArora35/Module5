@@ -118,8 +118,8 @@ function presidentsMeticsFunction() {
   if (rf != null) {
 	for(let x =0; x<presidentsData.length; x++)
 	{
-		if(presidentsData[x].Name === rf)
-			alert(presidentsData[x].Height + ' : ' + presidentsData[x].Weight);
+		if(presidentsData[x].Name.toLowerCase() === rf.toLowerCase())
+			alert("Height: " + presidentsData[x].Height + ' -- Weight: ' + presidentsData[x].Weight);
 	}
     //var result = ReverseString(rf);
 	//alert(presidentsData[0].Name);
