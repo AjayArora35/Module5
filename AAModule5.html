@@ -68,7 +68,7 @@ function CSVasTable(data, columns) {
 <script type="text/javascript">
 function DisplayDataAsTable() {
 
-d3.csv("/presidents.csv", function(data) {
+d3.csv("presidents.csv", function(data) {
 alert(data);
   CSVasTable(data, ["Name", "Height", "Weight"]);
 });
