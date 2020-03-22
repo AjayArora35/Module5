@@ -36,38 +36,6 @@
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script type="text/javascript" >
 
-
-$(document).ready(function(){
-
-	function DisplayDataAsTable() {
-
-		function arrayToTable(tableData) {
-			var table = $('<table></table>');
-			$(tableData).each(function (i, rowData) {
-				var row = $('<tr></tr>');
-				$(rowData).each(function (j, cellData) {
-					row.append($('<td>'+cellData+'</td>'));
-				});
-				table.append(row);
-			});
-			return table;
-		}
-
-		$.ajax({
-			type: "GET",
-			url: "https://ajayarora35.github.io/Module5/presidents.csv",
-			success: function (data) {
-				$('body').append(arrayToTable(Papa.parse(data).data));
-			}
-		});
-
-	//d3.csv("https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
-			//CSVasTable(data, ["Name", "Height", "Weight"]);
-			
-		//});
-	}
-});
-
 function CSVasTable(data, columns) {
     var table = d3.select("#csvdisplay").append("table"),
         thead = table.append("thead"),
@@ -100,6 +68,41 @@ function CSVasTable(data, columns) {
     return( table);
 }
 
+var presidentsData;
+$(document).ready(function(){
+		$.ajax({
+			type: "GET",
+			url: "https://ajayarora35.github.io/Module5/presidents.csv",
+			success: function (data) {
+				presidentsData = $('body').append(arrayToTable(Papa.parse(data).data));
+			}
+		});
+
+});
+
+		function arrayToTable(tableData) {
+			var table = $('<table></table>');
+			$(tableData).each(function (i, rowData) {
+				var row = $('<tr></tr>');
+				$(rowData).each(function (j, cellData) {
+					row.append($('<td>'+cellData+'</td>'));
+				});
+				table.append(row);
+			});
+			return table;
+		}
+
+	function DisplayDataAsTable() {
+
+
+	alert(presidentsData);
+
+
+	//d3.csv("https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
+			//CSVasTable(data, ["Name", "Height", "Weight"]);
+			
+		//});
+	}
 
 
 
