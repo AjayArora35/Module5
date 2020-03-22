@@ -72,6 +72,19 @@ function CSVasTable(data, columns) {
 
 function DisplayDataAsTable() {
 
+var data;
+	$.ajax({
+	  type: "GET",  
+	  url: "https://ajayarora35.github.io/Module5/presidents.csv",
+	  dataType: "text/csv",       
+	  success: function(response)  
+	  {
+		data = $.csv.toArrays(response);
+		//generateHtmlTable(data);
+		alert(data);
+	  }   
+	});
+
 d3.csv("https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
 		CSVasTable(data, ["Name", "Height", "Weight"]);
 		
