@@ -85,23 +85,22 @@ $(document).ready(function(){
 
 });
 
-		function arrayToTable(tableData) {
-			var table = $('<table></table>');
-			$(tableData).each(function (i, rowData) {
-				var row = $('<tr></tr>');
-				$(rowData).each(function (j, cellData) {
-					row.append($('<td>'+cellData+'</td>'));
-				});
-				table.append(row);
-			});
-			return table;
-		}
+//		function arrayToTable(tableData) {
+//			var table = $('<table></table>');
+//			$(tableData).each(function (i, rowData) {
+//				var row = $('<tr></tr>');
+//				$(rowData).each(function (j, cellData) {
+//					row.append($('<td>'+cellData+'</td>'));
+//				});
+//				table.append(row);
+//			});
+//			return table;
+//		}
 
 	function DisplayDataAsTable() {
 
 	$("#csvdisplay").show();
 	//alert(presidentsData);
-	alert($("#csvdisplay").show());
 
 
 	}
@@ -196,10 +195,6 @@ function ReverseString(str) {
 </p>
 
 <div id="csvdisplay" style="display:none"></div>
-
-
-
-
 
 
 </body>
