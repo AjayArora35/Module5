@@ -79,6 +79,7 @@ $(document).ready(function(){
 //		});
 
 	d3.csv("https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
+			presidentsData = data;
 			CSVasTable(data, ["Name", "Height", "Weight"]);
 			
 		});
@@ -110,6 +111,14 @@ $(document).ready(function(){
 function goBack() {
   //window.history.back();
   location.reload();
+}
+
+function presidentsMeticsFunction() {
+  var rf = prompt("Please enter a president name", "Washington");
+  if (rf != null) {
+    //var result = ReverseString(rf);
+	alert(presidentsData);
+  }
 }
 
 
@@ -187,6 +196,7 @@ function ReverseString(str) {
 <button onclick="reverseFunction()">Reverse It</button>
 <button onclick="valueForMultiple()">Generate Multiples</button>
 <button onclick="DisplayDataAsTable()">Presidents Data</button>
+<button onclick="PresidentMetrics()">President Metrics?</button>
 
 <p id="Part1"></p>
 <p id="Part1a"></p>
