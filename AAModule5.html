@@ -68,8 +68,8 @@ function CSVasTable(data, columns) {
 <script type="text/javascript">
 function DisplayDataAsTable() {
 
-d3.csv("https://github.com/AjayArora35/Module5/blob/master/presidents.csv", function(data) {
-alert("trace");
+d3.csv("/blob/master/presidents.csv", function(data) {
+alert(data);
   CSVasTable(data, ["Name", "Height", "Weight"]);
 });
 
