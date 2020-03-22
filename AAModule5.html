@@ -26,7 +26,7 @@
 <body>
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
 <script src="https://d3js.org/d3-collection.v1.min.js"></script>
 <script src="https://d3js.org/d3-dispatch.v1.min.js"></script>
@@ -68,35 +68,36 @@ function CSVasTable(data, columns) {
     return( table);
 }
 
+$(document).ready(function(){
 
+	function DisplayDataAsTable() {
 
-function DisplayDataAsTable() {
+		function arrayToTable(tableData) {
+			var table = $('<table></table>');
+			$(tableData).each(function (i, rowData) {
+				var row = $('<tr></tr>');
+				$(rowData).each(function (j, cellData) {
+					row.append($('<td>'+cellData+'</td>'));
+				});
+				table.append(row);
+			});
+			return table;
+		}
 
-    function arrayToTable(tableData) {
-        var table = $('<table></table>');
-        $(tableData).each(function (i, rowData) {
-            var row = $('<tr></tr>');
-            $(rowData).each(function (j, cellData) {
-                row.append($('<td>'+cellData+'</td>'));
-            });
-            table.append(row);
-        });
-        return table;
-    }
+		$.ajax({
+			type: "GET",
+			url: "https://ajayarora35.github.io/Module5/presidents.csv",
+			success: function (data) {
+				$('body').append(arrayToTable(Papa.parse(data).data));
+			}
+		});
 
-    $.ajax({
-        type: "GET",
-        url: "https://ajayarora35.github.io/Module5/presidents.csv",
-        success: function (data) {
-            $('body').append(arrayToTable(Papa.parse(data).data));
-        }
-    });
-
-//d3.csv("https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
-		//CSVasTable(data, ["Name", "Height", "Weight"]);
-		
-	//});
-}
+	//d3.csv("https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
+			//CSVasTable(data, ["Name", "Height", "Weight"]);
+			
+		//});
+	}
+});
 
 
 function goBack() {
