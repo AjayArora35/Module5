@@ -116,8 +116,8 @@ function goBack() {
 function presidentsMeticsFunction() {
   var rf = prompt("Please enter a president name", "Washington");
   if (rf != null) {
-	for (const property in object) {
-	  console.log(`${property}: ${object[property]}`);
+	for (const property in presidentsData) {
+	  console.log(`${property}: ${presidentsData[property]}`);
 	}	
     //var result = ReverseString(rf);
 	alert(presidentsData);
