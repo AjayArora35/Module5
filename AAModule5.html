@@ -70,12 +70,17 @@ function CSVasTable(data, columns) {
 
 var presidentsData;
 $(document).ready(function(){
-		$.ajax({
-			type: "GET",
-			url: "https://ajayarora35.github.io/Module5/presidents.csv",
-			success: function (data) {
-				presidentsData = $('body').append(arrayToTable(Papa.parse(data).data));
-			}
+//		$.ajax({
+//			type: "GET",
+//			url: "https://ajayarora35.github.io/Module5/presidents.csv",
+//			success: function (data) {
+//				presidentsData = $('body').append(arrayToTable(Papa.parse(data).data));
+//			}
+//		});
+
+	d3.csv("https://ajayarora35.github.io/Module5/presidents.csv", function(data) {
+			CSVasTable(data, ["Name", "Height", "Weight"]);
+			
 		});
 
 });
